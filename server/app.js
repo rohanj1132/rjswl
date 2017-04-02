@@ -1,22 +1,26 @@
 var express = require('express')
 var app = express()
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 app.get('/', function (req, res) {
-  res.send('Hey there!')
+  res.send('Hey there!');
 })
 
-app.get('/paul', function (req, res) {
-  res.send('Hi Paul!')
-})
-
-app.get('/kushal', function (req, res) {
-  res.send('Hi Kushal!')
-})
-
-app.get('/prapti', function (req, res) {
-  res.send('Hi Prapti!')
+app.get('/:name', function (req, res) {
+  var name = req.params.name || "there";
+  var capitalName = capitalizeFirstLetter(name);
+  switch (name) {
+    case "kushal":
+      res.send("Hey "+ capitalName +", what's up?");
+      break;
+    default:
+      res.send('Hi '+ capitalName +'!');
+  }
 })
 
 app.listen(80, function () {
-  console.log('Example app listening on port 80!')
+  console.log('My app listening on port 80!');
 })
