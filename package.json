@@ -1,0 +1,14 @@
+{
+  "name": "rjswl",
+  "version": "1.0.0",
+  "description": "website about me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rohan Jaiswal",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.15.2"
+  }
+}
